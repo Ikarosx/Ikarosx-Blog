@@ -1,5 +1,5 @@
 ---    
-title: SpringBoot打包Docker镜像
+title: Docker开启TLS
 date: 2020-8-12 20:15:50
 categories:    
  - Container    
@@ -26,9 +26,9 @@ cpu占用100%
 实际上我们应该使用TLS传输并使用CA认证
 
 ## 目标
-推送到私服
+开启docker TLS
 
-## 生成CA
+## 生成CA密钥和证书
 
 ```shell
 # 创建CA证书私钥
@@ -60,3 +60,39 @@ openssl req -sha256 -new -key server-key.pem -out server.csr
 ```shell
 openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out server-cert.pem
 ```
+## 创建客户端密钥及签名
+```shell
+# 
+openssl genrsa -out key.pem 4096
+# 签名
+openssl req -new -key key.pem -out client.csr
+# 创建配置文件
+echo extendedKeyUsage=clientAuth > extfile.cnf
+# 签名
+openssl x509 -req -days 1000 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out cert.pem -extfile extfile.cnf
+# 删除多余文件
+rm -rf ca.srl client.csr extfile.cnf server.csr
+```
+
+## 修改docker服务
+```shell
+vim /lib/systemd/system/docker.service
+# 修改ExecStart=/usr/bin/dockerd
+ExecStart=/usr/bin/dockerd --tlsverify --tlscacert=/ssl/ca.pem --tlscert=/ssl/server-cert.pem --tlskey=/ssl/server-key.pem -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock
+# 重启后台
+systemctl daemon-reload
+# 重启docker
+systemctl restart docker
+```
+
+## 复制证书文件到客户端
+/ssl/ca.pem /ssl/cert.pem /ssl/key.pem
+
+## docker测试
+docker --tlsverify --tlscacert=ca.pem --tlscert=cert.pem --tlskey=key.pem -H tcp://ip:2376 version
+
+::: tip dockerfile-maven  
+需要修改环境变量  
+DOCKER_HOST   
+DOCKER_CERT_PATH  
+:::
