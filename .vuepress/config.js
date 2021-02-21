@@ -6,37 +6,38 @@ module.exports = {
     [
       // 流程图
       'flowchart',
-      
-    ],
-    [
-      // bgm
-      '@vuepress-reco/vuepress-plugin-bgm-player',
-      {
-        audios: [
-          {
-            name: '野孩子',
-            url: '/bgm/野孩子.mp3',
-            cover: '/bgm/野孩子.jpg'
-          },
-          {
-            name: '容易受伤的女人',
-            url: '/bgm/容易受伤的女人.mp3',
-            cover: '/bgm/容易受伤的女人.jpg'
-          },
-          {
-            name: '广东爱情故事',
-            url: '/bgm/广东爱情故事.mp3',
-            cover: '/bgm/广东爱情故事.jpg'
-          },
-          {
-            name: '初恋情人',
-            url: '/bgm/初恋情人.mp3',
-            cover: '/bgm/初恋情人.jpg'
-          },
 
-        ]
-      }
-    ]
+    ],
+    ['@vuepress/last-updated'],
+    // [
+    //   // bgm
+    //   '@vuepress-reco/vuepress-plugin-bgm-player',
+    //   {
+    //     audios: [
+    //       {
+    //         name: '野孩子',
+    //         url: '/bgm/野孩子.mp3',
+    //         cover: '/bgm/野孩子.jpg'
+    //       },
+    //       {
+    //         name: '容易受伤的女人',
+    //         url: '/bgm/容易受伤的女人.mp3',
+    //         cover: '/bgm/容易受伤的女人.jpg'
+    //       },
+    //       {
+    //         name: '广东爱情故事',
+    //         url: '/bgm/广东爱情故事.mp3',
+    //         cover: '/bgm/广东爱情故事.jpg'
+    //       },
+    //       {
+    //         name: '初恋情人',
+    //         url: '/bgm/初恋情人.mp3',
+    //         cover: '/bgm/初恋情人.jpg'
+    //       },
+
+    //     ]
+    //   }
+    // ]
   ],
   head: [
     [
