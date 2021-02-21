@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SSH用户认证 | Ikarosxのblog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/Honeyview_Ikaros.jpg">
+    <meta name="description" content="Like someone.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.cbd3021e.css" as="style"><link rel="preload" href="/assets/js/app.08bd23ff.js" as="script"><link rel="preload" href="/assets/js/4.1a5599d6.js" as="script"><link rel="preload" href="/assets/js/1.c1a53eb2.js" as="script"><link rel="preload" href="/assets/js/17.c8b6ae40.js" as="script"><link rel="prefetch" href="/assets/js/10.6e0b6d08.js"><link rel="prefetch" href="/assets/js/11.4ba24942.js"><link rel="prefetch" href="/assets/js/12.cd6748e3.js"><link rel="prefetch" href="/assets/js/13.b1f2ac1d.js"><link rel="prefetch" href="/assets/js/14.a5ff9eb8.js"><link rel="prefetch" href="/assets/js/15.7cc02afd.js"><link rel="prefetch" href="/assets/js/16.4030395e.js"><link rel="prefetch" href="/assets/js/18.3c33cbe1.js"><link rel="prefetch" href="/assets/js/19.b8c3c0c6.js"><link rel="prefetch" href="/assets/js/20.5645ca3d.js"><link rel="prefetch" href="/assets/js/21.99461748.js"><link rel="prefetch" href="/assets/js/22.3e34aebd.js"><link rel="prefetch" href="/assets/js/23.50219c49.js"><link rel="prefetch" href="/assets/js/24.be022ec1.js"><link rel="prefetch" href="/assets/js/25.f0345f90.js"><link rel="prefetch" href="/assets/js/26.e41bcff0.js"><link rel="prefetch" href="/assets/js/27.7287660b.js"><link rel="prefetch" href="/assets/js/28.6327ee72.js"><link rel="prefetch" href="/assets/js/29.4a72ffe7.js"><link rel="prefetch" href="/assets/js/30.bf029b5d.js"><link rel="prefetch" href="/assets/js/31.2d2f188e.js"><link rel="prefetch" href="/assets/js/32.1d141139.js"><link rel="prefetch" href="/assets/js/33.08851046.js"><link rel="prefetch" href="/assets/js/5.728cd13f.js"><link rel="prefetch" href="/assets/js/6.9b474c11.js"><link rel="prefetch" href="/assets/js/7.73629e86.js"><link rel="prefetch" href="/assets/js/8.3018252b.js"><link rel="prefetch" href="/assets/js/9.9ac448a5.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.f9f43243.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cbd3021e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1c920fb4><div data-v-1c920fb4><div id="loader-wrapper" class="loading-wrapper" data-v-71fac282 data-v-1c920fb4 data-v-1c920fb4><div class="loader-main" data-v-71fac282><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div><div data-v-71fac282></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-6ef27168 data-v-1c920fb4 data-v-1c920fb4><h3 class="title" style="display:none;" data-v-6ef27168 data-v-6ef27168>Ikarosxのblog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6ef27168 data-v-6ef27168><input type="password" value="" data-v-6ef27168> <span data-v-6ef27168>Konck! Knock!</span> <button data-v-6ef27168>OK</button></label> <div class="footer" style="display:none;" data-v-6ef27168 data-v-6ef27168><span data-v-6ef27168><i class="iconfont reco-theme" data-v-6ef27168></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6ef27168>vuePress-theme-reco</a></span> <span data-v-6ef27168><i class="iconfont reco-copyright" data-v-6ef27168></i> <a data-v-6ef27168><span data-v-6ef27168>Ikarosx</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-1c920fb4><header class="navbar" data-v-1c920fb4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/Honeyview_Ikaros.jpg" alt="Ikarosxのblog" class="logo"> <span class="site-name">Ikarosxのblog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Web/" class="nav-link"><i class="iconfont undefined"></i>
+  Web
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ECSTraining/" class="nav-link"><i class="iconfont undefined"></i>
+  ECSTraining
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Container/" class="nav-link"><i class="iconfont undefined"></i>
+  Container
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Others/" class="nav-link"><i class="iconfont undefined"></i>
+  Others
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tools/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Demo/" class="nav-link"><i class="iconfont undefined"></i>
+  Demo
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1c920fb4></div> <aside class="sidebar" data-v-1c920fb4><div class="personal-info-wrapper" data-v-44c89ab2 data-v-1c920fb4><img src="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/Honeyview_Ikaros.jpg" alt="author-avatar" class="personal-img" data-v-44c89ab2> <h3 class="name" data-v-44c89ab2>
+    Ikarosx
+  </h3> <div class="num" data-v-44c89ab2><div data-v-44c89ab2><h3 data-v-44c89ab2>20</h3> <h6 data-v-44c89ab2>Article</h6></div> <div data-v-44c89ab2><h3 data-v-44c89ab2>33</h3> <h6 data-v-44c89ab2>Tag</h6></div></div> <hr data-v-44c89ab2></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Web/" class="nav-link"><i class="iconfont undefined"></i>
+  Web
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ECSTraining/" class="nav-link"><i class="iconfont undefined"></i>
+  ECSTraining
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Container/" class="nav-link"><i class="iconfont undefined"></i>
+  Container
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Others/" class="nav-link"><i class="iconfont undefined"></i>
+  Others
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tools/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Demo/" class="nav-link"><i class="iconfont undefined"></i>
+  Demo
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6ef27168 data-v-1c920fb4><h3 class="title" style="display:none;" data-v-6ef27168 data-v-6ef27168>SSH用户认证</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6ef27168 data-v-6ef27168><input type="password" value="" data-v-6ef27168> <span data-v-6ef27168>Konck! Knock!</span> <button data-v-6ef27168>OK</button></label> <div class="footer" style="display:none;" data-v-6ef27168 data-v-6ef27168><span data-v-6ef27168><i class="iconfont reco-theme" data-v-6ef27168></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6ef27168>vuePress-theme-reco</a></span> <span data-v-6ef27168><i class="iconfont reco-copyright" data-v-6ef27168></i> <a data-v-6ef27168><span data-v-6ef27168>Ikarosx</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-1c920fb4><main class="page"><div class="page-title" style="display:none;"><h1>SSH用户认证</h1> <div data-v-d5d1b660><i class="iconfont reco-account" data-v-d5d1b660><span data-v-d5d1b660>Ikarosx</span></i> <i class="iconfont reco-date" data-v-d5d1b660><span data-v-d5d1b660>2020-08-01 15:29:40</span></i> <!----> <i class="iconfont reco-tag tags" data-v-d5d1b660><span class="tag-item" data-v-d5d1b660>Git</span><span class="tag-item" data-v-d5d1b660>SSH</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p>昨天发的搭建vuepress，用到了scp来上传到云服务器<br>
+于是打算发一篇SSH登陆的<br>
+虽然以前也有用过<br>
+但不是很熟悉</p></div> <h2 id="预备知识"><a href="#预备知识" class="header-anchor">#</a> 预备知识</h2> <h3 id="两种级别的安全验证"><a href="#两种级别的安全验证" class="header-anchor">#</a> 两种级别的安全验证</h3> <p>SSH有两种级别的安全验证</p> <ul><li>基于口令</li> <li>基于密钥</li></ul> <h3 id="非对称加密"><a href="#非对称加密" class="header-anchor">#</a> 非对称加密</h3> <p>非对称加密有两个密钥：公钥和私钥<br>
+公钥加密的需要用私钥解密<br>
+私钥加密的需要用公钥解密</p> <h2 id="登陆命令"><a href="#登陆命令" class="header-anchor">#</a> 登陆命令</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 如果没有配置SSH密钥，回车后需要输入账号的密码</span>
+<span class="token function">ssh</span> 用户名@主机
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="口令登陆原理"><a href="#口令登陆原理" class="header-anchor">#</a> 口令登陆原理</h2> <img src="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/SSH%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86%E5%8E%9F%E7%90%86.png"> <h2 id="密钥登陆原理"><a href="#密钥登陆原理" class="header-anchor">#</a> 密钥登陆原理</h2> <img src="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/SSH%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E5%8E%9F%E7%90%86.png"> <h2 id="生成公私钥"><a href="#生成公私钥" class="header-anchor">#</a> 生成公私钥</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># -t指定密钥算法，-C为备注</span>
+ssh-keygen -t rsa -C <span class="token string">&quot;youemail@xx.com&quot;</span>
+<span class="token comment"># 然后会让你是否输入私钥的密码，测试用可以不输入</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block warning"><p class="custom-block-title">私钥密码</p> <p>不设置的时候，ssh可以直接免密登陆,但得确保证书不泄露<br>
+设置的时候，ssh需要输入私钥密码(<strong>不是用户密码</strong>)</p></div> <p>生成的文件默认放在了<code>~/.ssh/</code>下</p> <ul><li>id_rsa</li> <li>id_rsa.pub</li></ul> <h2 id="证书登陆部署公钥到服务器"><a href="#证书登陆部署公钥到服务器" class="header-anchor">#</a> 证书登陆部署公钥到服务器</h2> <h3 id="手动追加文件"><a href="#手动追加文件" class="header-anchor">#</a> 手动追加文件</h3> <p>把公钥追加到~/.ssh/authorized_keys文件里<br>
+上传公钥到服务器,用命令<code>cat id_rsa.pub &gt;&gt; authorized_keys</code></p> <h3 id="ssh-copy-id"><a href="#ssh-copy-id" class="header-anchor">#</a> ssh-copy-id</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># -i指定你的公钥文件目录，后面跟上你要指定的用户名和服务器</span>
+<span class="token comment"># 如果windows下命令未找到，可以尝试使用wsl里的命令</span>
+<span class="token comment"># 我能在git上找到对应的命令，但无法运行，可能是不支持？</span>
+ssh-copy-id -i ~/.ssh/id_rsa.pub ikarosx@ikarosx.cn
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">服务器如何寻找authorized_keys</p> <p>根据你选择的用户名,找到服务器对应用户下的.ssh目录的authorized_keys<br>
+如果不指定用户名，会先去<code>~/.ssh/config</code>找<br>
+如果没有找到，就会使用当前登录用户作为用户名</p></div> <h2 id="登录"><a href="#登录" class="header-anchor">#</a> 登录</h2> <p>部署公钥到服务器之后就可以使用证书登陆了</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">ssh</span> Ikarosx@ikarosx.cn
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="中间人攻击"><a href="#中间人攻击" class="header-anchor">#</a> 中间人攻击</h3> <p>使用口令登陆可能存在中间人攻击
+<img src="https://ikaros-picture.oss-cn-shenzhen.aliyuncs.com/typora/Ikaros/SSH%E4%B8%AD%E9%97%B4%E8%80%85.png"></p> <h4 id="指纹验证"><a href="#指纹验证" class="header-anchor">#</a> 指纹验证</h4> <p>在第一次连接的时候会有一个提示</p> <blockquote><p>The authenticity of host 'xxxxx' can't be established.<br>
+ECDSA key fingerprint is SHA256:+0HbtPMHKf/OpdTOi4ze9yxz99YC37VtCH+6K8Re9kE.<br>
+Are you sure you want to continue connecting (yes/no)?</p></blockquote> <p>这个就是让我们确认这个主机的指纹是否是正确的</p> <div class="custom-block tip"><p class="custom-block-title">指纹哪里来</p> <p>指纹是来自服务器的ECDSA公钥指纹
+我们可以通过下面命令自己校验一下</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># -E可以指定算法,-l为查看指纹,-f指定文件 服务器的公钥存放在/etc/ssh里</span>
+ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div> <p>当我们输入yes的时候即表示信任该服务器<br>
+然后就会存放入<code>~/.ssh/known_hosts</code>里</p> <h2 id="ssh"><a href="#ssh" class="header-anchor">#</a> .ssh</h2> <h3 id="config"><a href="#config" class="header-anchor">#</a> config</h3> <p>我们在<code>.ssh/</code>下新建文件<code>config</code><br>
+对其进行配置，以满足我们多样化的需求<br>
+默认情况下，不指定<code>-i</code>证书位置<br>
+会按顺序找下面几个文件，如果都不满足则要求你输入登陆密码</p> <ul><li>~/.ssh/id_rsa</li> <li>~/.ssh/id_dsa</li> <li>~/.ssh/id_ecdsa</li> <li>~/.ssh/id_ed25519</li></ul> <p>默认情况下不管我们连接哪台服务器都会去找几个私钥<br>
+那么当我们想要为多个服务器配置多个密钥就可以用config来指定</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 别名，即@之后的名字，如果@之后的是ikarosx1.cn，就会找到这里的HostName，这是实际访问的主机</span>
+Host ikarosx1.cn
+    <span class="token comment"># 当ssh命令为ssh ikarosx.cn时会先来config找这里的User，找不到才是当前登陆用户</span>
+    User Ikarosx
+    <span class="token comment"># 实际主机名</span>
+    HostName ikarosx.cn
+    <span class="token comment"># 证书位置</span>
+    IdentityFile ~/.ssh/ikarosx/id_rsa
+
+Host github.com
+    User Ikarosx
+    HostName github.com
+    IdentityFile ~/.ssh/github/id_rsa
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="known-hosts"><a href="#known-hosts" class="header-anchor">#</a> known_hosts</h3> <p>存放信任的主机</p> <h2 id="结语"><a href="#结语" class="header-anchor">#</a> 结语</h2> <ul><li>本文所描述的是认证阶段，前面应该还有版本协商、算法协商和通过DH算法来交换密钥的过程</li> <li>中间人攻击会发生在第一次连接的时候，所以要确保指纹验证是正确的</li> <li>SSL和SSH有点类似，但SSH是人工验证指纹，而SSL使用的是CA机构来认证</li></ul></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-0046dcc1 data-v-0046dcc1><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-0046dcc1><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-0046dcc1></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-0046dcc1></path></svg></div><div></div><div class="reco-bgm-panel" data-v-0a2aff30><audio id="bgm" src="/bgm/1.mp3" data-v-0a2aff30></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><img src="/bgm/1.jpg" data-v-0a2aff30></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><div class="reco-bgm-cover" style="background-image:url(/bgm/1.jpg);" data-v-0a2aff30><div class="mini-operation" style="display:none;" data-v-0a2aff30><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-0a2aff30></i></div> <div class="falut-message" style="display:none;" data-v-0a2aff30>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><div class="info-box" data-v-0a2aff30><i class="reco-bgm reco-bgm-music music" data-v-0a2aff30></i>野孩子</div> <div class="info-box" data-v-0a2aff30><i class="reco-bgm reco-bgm-artist" data-v-0a2aff30></i></div> <div class="reco-bgm-progress" data-v-0a2aff30><div class="progress-bar" data-v-0a2aff30><div class="bar" data-v-0a2aff30></div></div></div> <div class="reco-bgm-operation" data-v-0a2aff30><i class="reco-bgm reco-bgm-last last" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-play play" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-next next" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-0a2aff30></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-0a2aff30></i> <div class="volume-bar" data-v-0a2aff30><div class="bar" data-v-0a2aff30></div></div></div></div> <div class="reco-bgm-left-box" data-v-0a2aff30 data-v-0d264cb4 data-v-0a2aff30><i class="reco-bgm reco-bgm-left" data-v-0a2aff30></i></div></div></div></div></div>
+    <script src="/assets/js/app.08bd23ff.js" defer></script><script src="/assets/js/4.1a5599d6.js" defer></script><script src="/assets/js/1.c1a53eb2.js" defer></script><script src="/assets/js/17.c8b6ae40.js" defer></script>
+  </body>
+</html>
